@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="HubSpot App Regression Suite" thread-count="2" parallel="tests">
+<!-- 
+	<listeners>
+		<listener class-name="com.testng.MyListenerTest" />
+	</listeners>
+	
+	parallel= classes, methods, tests
+	 -->
+	 
+	<test name="Sample Contacts Test - chrome" verbose="2" thread-count="5"  parallel="classes">
+	<parameter name = "browser" value="chrome" />
+		<parameter name = "url" value="http://www.google.com" />
+		<parameter name = "headless" value="no" />
+		
+		<classes>
+			<class name="com.testng.ContactsTest" />
+				<class name="com.testng.HomeTest" />
+		</classes>
+		
+	</test>
+
+	<test name="Sample Contacts Test- firefox" verbose="2" thread-count="5"  parallel="classes">
+	<parameter name = "browser" value="firefox" />
+		<parameter name = "url" value="http://www.google.com" />
+		<parameter name = "headless" value="yes" />
+		
+		<classes>
+			<class name="com.testng.ContactsTest" />
+			<class name="com.testng.HomeTest" />
+		</classes>
+		
+	</test>
+	
+
+</suite> 
